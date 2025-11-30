@@ -1,187 +1,246 @@
-<!-- 🌌 ZodiacMatrix – ZM Section -->
-<section id="zodiac-matrix" class="matrix-section">
-  <h2>🌌 ZodiacMatrix – ZM</h2>
-  <p>
-    ZodiacMatrix הוא מוח־העל של StarScope: מטריצות, טבלאות וחיבורים בין כל 12 המזלות.
-    במקום לראות רק מזל בודד, כאן אפשר לראות את כל המערכת – יסודות, איכויות ותדרי חיים –
-    במבט אחד ברור, חד וקוסמי.
-  </p>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZodiacMatrix – ZM | StarScope</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <div class="matrix-wrapper">
+<style>
+body {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    background: radial-gradient(circle at center, #080c1c, #000);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-    <!-- 🔢 Sign Grid -->
+.stars {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0; left:0;
+    background: url('images/stars-bg.png'); /* תוכל לשים כאן את הרקע החדש */
+    opacity: 0.35;
+    z-index: -1;
+}
+
+/* HEADER */
+header {
+    padding: 50px 20px 10px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 25px #6be8ff, 0 0 50px #00ffff;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: #b8f4ff;
+}
+
+/* NAVIGATION */
+.navbar {
+    margin-top: 25px;
+}
+.navbar a {
+    margin: 0 15px;
+    color: #aee6ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    color: #fff;
+    text-shadow: 0 0 12px #00eaff;
+}
+
+/* TITLE BLOCK */
+.section-title {
+    font-size: 2.4rem;
+    margin-top: 60px;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+.section-desc {
+    max-width: 900px;
+    margin: 20px auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #d1f3ff;
+}
+
+/* TABLE SECTION */
+.matrix-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 10px;
+}
+
+.matrix-title {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #8eeeff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.matrix-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.55);
+    box-shadow: 0 0 18px rgba(0,255,255,0.25);
+}
+
+.matrix-table th,
+.matrix-table td {
+    border: 1px solid rgba(0,255,255,0.25);
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.matrix-table th {
+    background: linear-gradient(90deg, rgba(0,255,255,0.25), rgba(90,0,255,0.25));
+    font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    font-size: 1rem;
+    color: #89d7ff;
+}
+footer span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<header>
+    <div class="title">🌌 ZodiacMatrix – ZM</div>
+    <div class="subtitle">מפת־העל של המזלות • יסודות • איכויות • תדרים</div>
+
+    <nav class="navbar">
+        <a href="index.html">דף הבית</a>
+        <a href="#sign-grid">טבלת מזלות</a>
+        <a href="#elements">יסודות</a>
+        <a href="#modalities">איכויות</a>
+    </nav>
+</header>
+
+<!-- SECTION INTRO -->
+<div class="section-title">מהו ZodiacMatrix?</div>
+<p class="section-desc">
+ZodiacMatrix הוא מודול העומק של StarScope:  
+טבלאות מטריקס המציגות את 12 המזלות בצורה מאורגנת, חדה, קריאה ומקורית.  
+במקום לראות רק “מזל”, כאן תראו שפה שלמה: יסודות, איכויות ותדרי־חיים.
+</p>
+
+<!-- SIGN GRID -->
+<section id="sign-grid" class="matrix-wrapper">
     <div class="matrix-title">🔢 Sign Grid – מטריקס 12 המזלות</div>
-    <p>
-      טבלת הבסיס: כל מזל, היסוד שלו, האיכות והתדר המרכזי.
-      זהו הציר המרכזי שעליו בנוי כל ZodiacMatrix.
-    </p>
 
     <div class="matrix-scroll">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>מזל</th>
-            <th>סמל</th>
-            <th>יסוד</th>
-            <th>איכות</th>
-            <th>תדר מפתח</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>טלה</td>
-            <td>♈</td>
-            <td>אש</td>
-            <td>קרדינלי</td>
-            <td>התנעה, אומץ, פעולה</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>שור</td>
-            <td>♉</td>
-            <td>אדמה</td>
-            <td>קבוע</td>
-            <td>יציבות, חומר, התמדה</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>תאומים</td>
-            <td>♊</td>
-            <td>אוויר</td>
-            <td>משתנה</td>
-            <td>תקשורת, סקרנות</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>סרטן</td>
-            <td>♋</td>
-            <td>מים</td>
-            <td>קרדינלי</td>
-            <td>רגש, שייכות</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>אריה</td>
-            <td>♌</td>
-            <td>אש</td>
-            <td>קבוע</td>
-            <td>יצירתיות, ביטוי אישי</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>בתולה</td>
-            <td>♍</td>
-            <td>אדמה</td>
-            <td>משתנה</td>
-            <td>דיוק, שירות</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>מאזניים</td>
-            <td>♎</td>
-            <td>אוויר</td>
-            <td>קרדינלי</td>
-            <td>איזון, יחסים</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>עקרב</td>
-            <td>♏</td>
-            <td>מים</td>
-            <td>קבוע</td>
-            <td>עומק, טרנספורמציה</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>קשת</td>
-            <td>♐</td>
-            <td>אש</td>
-            <td>משתנה</td>
-            <td>חופש, אמונה</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>גדי</td>
-            <td>♑</td>
-            <td>אדמה</td>
-            <td>קרדינלי</td>
-            <td>אחריות, מבנה</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>דלי</td>
-            <td>♒</td>
-            <td>אוויר</td>
-            <td>קבוע</td>
-            <td>חדשנות, קהילה</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>דגים</td>
-            <td>♓</td>
-            <td>מים</td>
-            <td>משתנה</td>
-            <td>חמלה, דמיון</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>מזל</th>
+                    <th>סמל</th>
+                    <th>יסוד</th>
+                    <th>איכות</th>
+                    <th>תדר מפתח</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>טלה</td><td>♈</td><td>אש</td><td>קרדינלי</td><td>התנעה, אומץ, פעולה</td></tr>
+                <tr><td>2</td><td>שור</td><td>♉</td><td>אדמה</td><td>קבוע</td><td>יציבות, חומר, התמדה</td></tr>
+                <tr><td>3</td><td>תאומים</td><td>♊</td><td>אוויר</td><td>משתנה</td><td>תקשורת, סקרנות</td></tr>
+                <tr><td>4</td><td>סרטן</td><td>♋</td><td>מים</td><td>קרדינלי</td><td>רגש, שייכות</td></tr>
+                <tr><td>5</td><td>אריה</td><td>♌</td><td>אש</td><td>קבוע</td><td>יצירתיות, ביטוי אישי</td></tr>
+                <tr><td>6</td><td>בתולה</td><td>♍</td><td>אדמה</td><td>משתנה</td><td>דיוק, שירות</td></tr>
+                <tr><td>7</td><td>מאזניים</td><td>♎</td><td>אוויר</td><td>קרדינלי</td><td>איזון, יחסים</td></tr>
+                <tr><td>8</td><td>עקרב</td><td>♏</td><td>מים</td><td>קבוע</td><td>עומק, טרנספורמציה</td></tr>
+                <tr><td>9</td><td>קשת</td><td>♐</td><td>אש</td><td>משתנה</td><td>חופש, אמונה</td></tr>
+                <tr><td>10</td><td>גדי</td><td>♑</td><td>אדמה</td><td>קרדינלי</td><td>אחריות, מבנה</td></tr>
+                <tr><td>11</td><td>דלי</td><td>♒</td><td>אוויר</td><td>קבוע</td><td>חדשנות, קהילה</td></tr>
+                <tr><td>12</td><td>דגים</td><td>♓</td><td>מים</td><td>משתנה</td><td>חמלה, דמיון</td></tr>
+            </tbody>
+        </table>
     </div>
-
-    <!-- 🌋 Element Matrix -->
-    <div class="matrix-title">🌋 Element Matrix – יסודות ותדרים</div>
-    <p>
-      מיפוי ארבעת היסודות: באיזה מזלות מופיע כל יסוד ומה התנועה האנרגטית שלו.
-      זהו הלב של ZodiacMatrix – זיהוי המקצב הפנימי של כל מי שנולד תחת כל יסוד.
-    </p>
-
-    <div class="matrix-scroll">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th>יסוד</th>
-            <th>מזלות</th>
-            <th>איכות אנרגטית</th>
-            <th>תנועת חיים</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🔥 אש</td>
-            <td>טלה • אריה • קשת</td>
-            <td>התלהבות, השראה, דחף קדימה</td>
-            <td>התחלות, אומץ, הנהגה</td>
-          </tr>
-          <tr>
-            <td>🌍 אדמה</td>
-            <td>שור • בתולה • גדי</td>
-            <td>יציבות, חומר, התמדה</td>
-            <td>בנייה, סדר, תוצאה מוחשית</td>
-          </tr>
-          <tr>
-            <td>💨 אוויר</td>
-            <td>תאומים • מאזניים • דלי</td>
-            <td>מחשבה, רעיונות, קשרים</td>
-            <td>דיאלוג, תנועה בין אנשים, למידה</td>
-          </tr>
-          <tr>
-            <td>🌊 מים</td>
-            <td>סרטן • עקרב • דגים</td>
-            <td>רגש, עומק, זרימה</td>
-            <td>אינטואיציה, אמפתיה, ריפוי</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 🧭 Call to Action -->
-    <div class="matrix-title">🧭 איך לעבוד עם ZodiacMatrix?</div>
-    <p>
-      בחר את המזל שלך, מצא את היסוד והאיכות שלך, ושאל:
-      “איך אני יכול לרכוב על התדר הזה היום, במקום להילחם בו?”
-      כך ZodiacMatrix הופך מלוח מידע למפת פעולה יומית.
-    </p>
-
-  </div>
 </section>
+
+<!-- ELEMENT MATRIX -->
+<section id="elements" class="matrix-wrapper">
+    <div class="matrix-title">🌋 Element Matrix – יסודות ותדרים</div>
+
+    <div class="matrix-scroll">
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th>יסוד</th>
+                    <th>מזלות</th>
+                    <th>איכות אנרגטית</th>
+                    <th>תנועת חיים</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>🔥 אש</td><td>טלה • אריה • קשת</td><td>התלהבות, השראה, דחף קדימה</td><td>התחלות, אומץ, הנהגה</td></tr>
+                <tr><td>🌍 אדמה</td><td>שור • בתולה • גדי</td><td>יציבות, חומר, התמדה</td><td>בנייה, סדר, תוצאה מוחשית</td></tr>
+                <tr><td>💨 אוויר</td><td>תאומים • מאזניים • דלי</td><td>מחשבה, רעיונות, קשרים</td><td>דיאלוג, תנועה בין אנשים, למידה</td></tr>
+                <tr><td>🌊 מים</td><td>סרטן • עקרב • דגים</td><td>רגש, עומק, זרימה</td><td>אינטואיציה, אמפתיה, ריפוי</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- MODALITIES MATRIX -->
+<section id="modalities" class="matrix-wrapper">
+    <div class="matrix-title">🧩 Modality Matrix – איכויות תנועה</div>
+
+    <div class="matrix-scroll">
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th>איכות</th>
+                    <th>מזלות</th>
+                    <th>הגדרה</th>
+                    <th>כיוון עבודה</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>קרדינלי</td><td>טלה • סרטן • מאזניים • גדי</td><td>יוזם, פותח, מניע</td><td>להתחיל בבירור, להניע שינוי</td></tr>
+                <tr><td>קבוע</td><td>שור • אריה • עקרב • דלי</td><td>מעמיק, יציב, מחזיק תדר</td><td>להתמיד, ללטש, לא להיתקע</td></tr>
+                <tr><td>משתנה</td><td>תאומים • בתולה • קשת • דגים</td><td>זורם, מסתגל, משנה צורה</td><td>להישאר במרכז תוך שינוי מתמיד</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © AnLoMinus SparKing Leon Yaakobov  
+    <span>“הַשָּׁמַיִם מְסַפְּרִים כְּבוֹד אֵל” (תהילים י״ט)</span>
+</footer>
+
+</body>
+</html>
